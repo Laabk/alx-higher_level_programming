@@ -5,12 +5,12 @@ fndef LISTS_H
 
 /**
  *  * struct listint_s - the singly linked list for nodes
- *   * @d: the integer invovled
+ *   * @n: the integer invovled
  *    * @next: pointer to following node
  */
 typedef struct listint_s
 {
-		int d;
+		int n;
 		struct listint_s *next;
 } listint_t;
 
