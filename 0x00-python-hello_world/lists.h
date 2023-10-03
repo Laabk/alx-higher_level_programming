@@ -7,6 +7,8 @@
  * struct listint_s - the singly linked list for nodes
  * @n: the integer invovled
  * @next: pointer to following node
+ * Description: a singly linked list node
+ * structures used for the project
  */
 typedef struct listint_s
 {
@@ -17,6 +19,6 @@ typedef struct listint_s
 void free_listint(listint_t *head);
 size_t print_listint(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
-int check_cycle(listint_t *list)
+int check_cycle(listint_t *list);
 
 #endif
