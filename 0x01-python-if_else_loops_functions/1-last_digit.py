@@ -5,6 +5,7 @@ if number >= 0:
     last_va = number % 10
 else:
     last_va = number % -10
+
 print('the last digit of {} is {}'.format(number, last_va), end='')
 
 if last_va > 5:
