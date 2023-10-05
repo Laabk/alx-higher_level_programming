@@ -6,3 +6,8 @@ if __name__ == "__main__":
         print("{} arguments:".format(agu))
     elif agu == 1:
         print("{} argument:".format(agu))
+    else:
+        print("{} arguments:".format(agu))
+    for ite in range(agu):
+        print("{}: {}".format(ite + 1, sys.argv[ite + 1]))
+
