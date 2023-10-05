@@ -3,16 +3,14 @@ if __name__ == "__main__":
     from calculator_1 import sub, mul, div, add 
     import sys
 
-    if len(sys.argv) - 1 != 3:
+    argmn = len(sys.argv) - 1
+    if argmn != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-
-    usge = {"+": add, "-": sub, "*": mul, "/": div}
-    if sys.argv[2] not in list(usge.keys()):
-        print("Unknown operator. Available operators: +, -, * and /")
+    oprt = sys.argv[2]
+     if oprt != '*' and oprt != '+' and op != '-' and op != '/':
+        print("Unknown operator. Available operators: *, +, - and /")
         sys.exit(1)
-
+    from calculator_1 import sub, mul, div, add
     a = int(sys.argv[1])
     b = int(sys.argv[3])
-    print("{} {} {} = {}".format(a, sys.argv[2], b, usge[sys.argv[2]](a, b))
-
