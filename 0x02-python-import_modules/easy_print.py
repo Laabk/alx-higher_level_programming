@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-print('#pythoniscool')
+print("#pythoniscool")
 "the string to be printed when imported"
