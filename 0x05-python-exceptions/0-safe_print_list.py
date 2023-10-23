@@ -1,14 +1,11 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
     numbs = 0
-
-    try:
-        for d in range(x):
+    for d in range(x):
+        try:
             print("{}".format(my_list[d]), end='')
+            numbs = numbs + 1
         except:
             break
-        else:
-            numbs = numbs + 1
-
     print()
     return (numbs)
