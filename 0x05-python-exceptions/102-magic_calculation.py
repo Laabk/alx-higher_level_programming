@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def magic_calculation(a, b):
-    thr_result = 0
+    the_result = 0
     for d in range(1, 3):
         try:
             if (d > a):
