@@ -6,11 +6,8 @@ class Square:
     """class square."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize a the  Square.
-        Args:
-            size (int) & position (tuple)
+        """Initialize a the  Square
         """
-
         self.size = size
         self.position = position
 
