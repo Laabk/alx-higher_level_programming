@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+"defines a class square object"
+
 class Square:
-    "defines a class square object"
+    "class square object"
 
     def __init__(self, size):
         "the method taken to stores the size of the square"
