@@ -5,8 +5,8 @@
 class Rectangle:
     """a claass for the rectanglle."""
 
-    number_of_instances = 0
-    print_symbol = "#"
+    the_occu = 0
+    symb = "#"
 
     def __init__(self, width=0, height=0):
         """this inilises the recta class
@@ -14,7 +14,7 @@ class Rectangle:
             width (int): with of new rectangle.
             height (int): height of new rectangle.
         """
-        type(self).number_of_instances += 1
+        type(self).the_occu += 1
         self.width = width
         self.height = height
 
@@ -61,7 +61,7 @@ class Rectangle:
 
         reca = []
         for d in range(self.__height):
-            [reca.append(str(self.print_symbol)) for a in range(self.__width)]
+            [reca.append(str(self.symb)) for a in range(self.__width)]
             if d != self.__height - 1:
                 reca.append("\n")
         return ("".join(reca))
@@ -74,5 +74,5 @@ class Rectangle:
 
     def __del__(self):
         """Print a message when any deleted Rectangle."""
-        type(self).number_of_instances -= 1
+        type(self).the_occu -= 1
         print("Bye rectangle...")
