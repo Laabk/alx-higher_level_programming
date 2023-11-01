@@ -60,13 +60,13 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ("")
         rectangle = ""
-        for column in range(self.__height):
-            for row in range(self.__width):
+        for col in range(self.__height):
+            for ro in range(self.__width):
                 try:
                     rectangle += str(self.print_symbol)
                 except Exception:
                     rectangle += type(self).print_symbol
-            if column < self.__height - 1:
+            if col < self.__height - 1:
                 rectangle += "\n"
         return (rectangle)
 
@@ -92,4 +92,4 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        return (Rectangle)
+        return Rectangle
