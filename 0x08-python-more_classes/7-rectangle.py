@@ -15,7 +15,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        Rec.number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -59,16 +59,16 @@ class Rectangle:
         """shows diagram of rectangle which stands for an object"""
         if self.__width == 0 or self.__height == 0:
             return ("")
-        rec = ""
-        for co in range(self.__height):
+        rectangle = ""
+        for col in range(self.__height):
             for ro in range(self.__width):
                 try:
-                    rec += str(self.print_symbol)
+                    rectangle += str(self.print_symbol)
                 except Exception:
-                    rec += type(self).print_symbol
+                    rectangle += type(self).print_symbol
             if col < self.__height - 1:
-                rec += "\n"
-        return (rec)
+                rectangle += "\n"
+        return (rectangle)
 
     def __repr__(self):
         """returns string form of the rectangle"""
