@@ -1,30 +1,30 @@
 #!/usr/bin/python3
-"""definning a class for the rectangle"""
+"""this defines a the class ofrectangle"""
 
 
 class Rectangle:
-    """a claass for the rectanglle."""
-
-    the_occu = 0
-    symb = "#"
+    """represents a class ofrectangle"""
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """this inilises the recta class
-        theargs:
-            width (int): with of new rectangle.
-            height (int): height of new rectangle.
+        """insantiatiny the rectangle class
+        Args:
+            width: width of the rectangle
+            height: height of rectang
         """
-        type(self).the_occu += 1
         self.width = width
         self.height = height
+        Rec.number_of_instances += 1
 
     @property
     def width(self):
-        """the width of rec"""
+        """width attribute"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """width attribute"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -33,11 +33,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """height of rectangle."""
+        """height attribute"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """height attribute"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -45,34 +46,35 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Return a val area of rectangle."""
+        """rea of the rectangle"""
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """Return a val for perimeter of rectangle"""
+        """perimeter of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
-    def __str__(self):
-        """this prints the form of the Rectangle"""
+    def __str__(self) -> str:
+        """shows diagram of rectangle which stands for an object"""
         if self.__width == 0 or self.__height == 0:
             return ("")
-
-        reca = []
-        for d in range(self.__height):
-            [reca.append(str(self.symb)) for a in range(self.__width)]
-            if d != self.__height - 1:
-                reca.append("\n")
-        return ("".join(reca))
+        rec = ""
+        for co in range(self.__height):
+            for ro in range(self.__width):
+                try:
+                    rec += str(self.print_symbol)
+                except Exception:
+                    rec += type(self).print_symbol
+            if col < self.__height - 1:
+                rec += "\n"
+        return (rec)
 
     def __repr__(self):
-        """string form for the Rectangle."""
-        reca = "Rectangle(" + str(self.__width)
-        reca += ", " + str(self.__height) + ")"
-        return (reca)
+        """returns string form of the rectangle"""
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Print a message when any deleted Rectangle."""
-        type(self).the_occu -= 1
+        """prints particular message when any object is deleted"""
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
