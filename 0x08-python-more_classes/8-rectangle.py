@@ -4,8 +4,9 @@
 
 class Rectangle:
     """ a class rectangle"""
-    instance = 0
-    symbol = "#"
+    number_of_instances = 0
+    print_symbol = "#"
+
 
     def __init__(self, width=0, height=0):
         """Initializing thw class of rectangle
@@ -15,7 +16,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        Re.instance += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -59,15 +60,15 @@ class Rectangle:
         """diagram o rectangle defined for the object"""
         if self.__width == 0 or self.__height == 0:
             return ("")
-        re = ""
+        rectangle = ""
         for col in range(self.__height):
             for ro in range(self.__width):
                 try:
-                    re += str(self.symbol)
+                    rectangle += str(self.print_symbol)
                 except Exception:
-                    re += type(self).symbol
+                    rectangle += type(self).print_symbol
             if col < self.__height - 1:
-                re += "\n"
+                rectangle += "\n"
         return (r)
 
     def __repr__(self):
@@ -77,15 +78,15 @@ class Rectangle:
     def __del__(self):
         """prints a message when object is deleted"""
         print("Bye rectangle...")
-        Re.instance -= 1
+        Rectangle.number_of_instances -= 1
 
     @staticmethod
-    def bigger_or_equal(rec, reca):
-        if not isinstance(rec, Rectangle):
+    def bigger_or_equal(rect_1, rect_2):
+        if not isinstance(rect_1, Rectangle):
             raise TypeError("rec isan instance of Rectangle")
-        if not isinstance(reca, Rectangle):
+        if not isinstance(rect_2, Rectangle):
             raise TypeError("reca is an instance of Rectangle")
-        if rec.area() >= reca.area():
-            return rec
+        if rect_1.area() >= rect_2.area():
+            return rect_1
         else:
-            return reca
+            return rect_2
