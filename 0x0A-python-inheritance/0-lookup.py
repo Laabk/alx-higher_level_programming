@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-    """ a module which returns the list of attributes
-        and methods of an object
-    """
+"""
+a module which returns the list of attributesand methods of an object
+"""
 
 
 def lookup(obj):
