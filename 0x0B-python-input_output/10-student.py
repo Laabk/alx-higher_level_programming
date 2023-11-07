@@ -19,6 +19,6 @@ class Student:
         a list of strings, it represents only those attributes in the list
         """
         if (type(attrs) == list and
-                all(type(ele) == str for ite in attrs)):
+                all(type(ite) == str for ite in attrs)):
             return {d: getattr(self, d) for d in attrs if hasattr(self, d)}
         return self.__dict__
