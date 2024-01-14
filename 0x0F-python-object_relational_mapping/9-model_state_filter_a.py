@@ -1,6 +1,19 @@
--- creates a table second_table in hbtn_0c_0 in the MySQL server and add multiples rows.
-CREATE TABLE IF NOT EXISTS second_table (id INT, name VARCHAR(256), score INT);
-INSERT INTO second_table (id, name, score) VALUES (1, "John", 10);
-INSERT INTO second_table (id, name, score) VALUES (2, "Alex", 3);
-INSERT INTO second_table (id, name, score) VALUES (3, "Bob", 14);
-INSERT INTO second_table (id, name, score) VALUES (4, "George", 8);
+#!/usr/bin/python3
+"""
+A script to listss all State objects
+from the database `hbtn_0e_6.
+"""
+from sqlalchemy import create_engine
+from sys import argv
+from model_state import State, Bas
+from sqlalchemy.orm import sessionmaker
+
+if __name__ == "__main__":
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    state_name = session.query(State).filter(State.name.like('%a%'))
+    for i in state_name:
+        print(f"{i.id}: {i.name}")
