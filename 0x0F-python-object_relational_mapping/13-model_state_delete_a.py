@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-
 """
-A script to lists all State objects
-from the database `hbtn_0e_6_
+A script that prints the first State object from the database
+hbtn_0e_6_usa
 """
-
 from sys import argv
 from sqlalchemy.orm import sessionmaker
 from model_state import State, Base
@@ -16,6 +14,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state_name = session.query(State).order_by(State.id).all()
-    for i in state_name:
-        print(f"{i.id}: {i.name}")
+    fir_state = session.query(State).filter(State.name.contains('a'))
+    for d in fir_state:
+        session.delete(d)
+    session.commit()
+    session.close()
