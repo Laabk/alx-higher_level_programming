@@ -5,7 +5,7 @@ const url = process.argv[2];
 const characterId = '18';
 let numbs = 0;
 
-request.get(url, (error, response, body) => {
+request.get(url, (erro, response, body) => {
   if (erro) {
     console.log(erro);
   } else {
